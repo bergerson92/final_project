@@ -5,10 +5,122 @@
 {% endblock %}
 
 {% block main %}
-<form action="/buy" method="post">
-    <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="symbol" placeholder="Symbol" type="text">
-    </div>
-    <button class="btn btn-primary" type="submit">submit</button>
-</form>
+<head>
+    <style>
+        .button {
+            background-color: #A19EF5;
+            border-radius: 12px;
+            margin: 5px;
+        }
+
+        .button:hover {background-color: #9EF5CD}
+
+        .button:active {
+            background-color: #9EF5CD;
+            transform: translateY(4px);
+        }
+    </style>
+</head>
+<h2>Here you can see your current PR</h2>
+<p>Click one of the buttons to sort your records</p>
+<div>
+    <button class="button" onclick="sortTable_record()">Sort by weight record</button>
+    <button class="button" onclick="sortTable_weight_class()">Sort by weight weight class</button>
+</div>
+    {% for value in personal_record %}
+        {% if value == 0 %}
+            <p>Fill in a new Personal Record first</p>
+        {% else %}
+            <h3>Your newest personal record is {{ value }} </h3>
+
+            <table class="table table-striped" id="myTable">
+                <thead>
+                    <tr>
+                        <th scope="col">Record</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Weight Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in history %}
+                    <tr>
+                        <td>{{ row["record"] }}</td>
+                        <td>{{ row["date"] }}</td>
+                        <td>{{ row["weight_class"] }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+    {% endfor %}
+    <script>
+        function sortTable_record() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("TD")[0];
+            y = rows[i + 1].getElementsByTagName("TD")[0];
+            //check if the two rows should switch place:
+            if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+            }
+            }
+            if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            }
+        }
+        }
+        function sortTable_weight_class() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("myTable");
+        switching = true;
+        /*Make a loop that will continue until
+        no switching has been done:*/
+        while (switching) {
+            //start by saying: no switching is done:
+            switching = false;
+            rows = table.rows;
+            /*Loop through all table rows (except the
+            first, which contains table headers):*/
+            for (i = 1; i < (rows.length - 1); i++) {
+            //start by saying there should be no switching:
+            shouldSwitch = false;
+            /*Get the two elements you want to compare,
+            one from current row and one from the next:*/
+            x = rows[i].getElementsByTagName("TD")[2];
+            y = rows[i + 1].getElementsByTagName("TD")[2];
+            //check if the two rows should switch place:
+            if (parseInt(x.innerHTML) > parseInt(y.innerHTML)) {
+                //if so, mark as a switch and break the loop:
+                shouldSwitch = true;
+                break;
+            }
+            }
+            if (shouldSwitch) {
+            /*If a switch has been marked, make the switch
+            and mark that a switch has been done:*/
+            rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+            switching = true;
+            }
+        }
+        }
+        </script>
 {% endblock %}

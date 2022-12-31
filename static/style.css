@@ -58,10 +58,10 @@ body {
     overflow-y: auto;
   }
 
-  .container_right {
-    background-color: #269ba1;
+  .container_left {
+    background-color: #7755ac;
     position: absolute;
-    right: 0rem;
+    left: 0rem;
     width: 50%;
     height: 40rem;
 }

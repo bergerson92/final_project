@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Clean and Jerk
+{% endblock %}
+
+{% block main %}
+<style>
+
+    .head {
+    background-color: #B8E4EE;
+    padding: 10px;
+    border-radius: 50px;
+    }
+
+    .column {
+    float: left;
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2.5%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+    }
+
+</style>
+<header class="head">
+    <h2>Here is a breakdown of all steps to successfully finish a snatch</h2>
+</header>
+
+<div class="row">
+    <div class="column">
+      <h2>First Step</h2>
+      <p>Stand in front of a loaded barbell with the feet set hip-width and turned slightly out. The shoulders should cover the barbell, with the hips lower than shoulder-level yet higher than the knees.</p>
+    </div>
+
+    <div class="column">
+      <h2>Second Step</h2>
+      <p>The first pull of the clean occurs when the barbell initially breaks from the floor. The first pull ends when the barbell passes the knee, which is the start of the second pull. Opposite to a snatch, the first pull if actually a deadlift. Again make sure to maintain a neutral spine and keep your core rigid.</p>
+    </div>
+
+    <div class="column">
+      <h2>Third step</h2>
+      <p>This next step could be broken down into two parts, but it happens so quickly that it is basically one cohesive step. For this pull, the barbell passes the knee and ends up right at hip level. The lifter then drives their hips and pulls the barbell up the body, making sure to stay balanced in the full foot with the shoulders above the bar. Then, the lifter acts upon the barbell to forcefully rotate their elbows underneath and into the front rack position. As you finish the second pull, stay active on the barbell after the second pull using the traps to elevate the bar higher and pull oneself under the bar.</p>
+    </div>
+
+    <div class="column">
+      <h2>Forth step</h2>
+      <p>As the bar is exploding upward from the hip drive, the lifter will quickly squat down and catch the barbell across their shoulders in a front rack position. The elbows should be pointing forward. </p>
+    </div>
+
+    <div class="column">
+      <h2>Fifth step</h2>
+      <p>From the front rack position, the lifter is going to dip their knees down a few inches. This creates a spring-like effect to help drive the weight overhead for the jerk phase of the lift. </p>
+    </div>
+
+    <div class="column">
+        <h2>Sixth step</h2>
+        <p>There are two types of jerk — a split jerk and a squat jerk. For now, we’ll stick with the squat jerk. Don’t think of the jerk as just an overhead press. Really, it’s a push press that your drop under to reduce the distance it has to travel overhead. So, you’re going to a) dip down, b) drive the bar over your head, and c) drop into a half squat position as the bar ascends. </p>
+    </div>
+
+    <div class="column">
+        <h2>Seventh step</h2>
+        <p>Lock your arms out and pause in the bottom of the jerk to stabilize the weight. Hold this position while you get set. Do not stand up until the weight feels balanced. Once you’re stabilized, stand up. </p>
+    </div>
+  </div>
+
+{% endblock %}

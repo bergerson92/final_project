@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    total
+{% endblock %}
+
+{% block main %}
+<p>You can check and save your Total PR against the World Records here</p>
+<p>Check out your current PR under Account (Personal Records)</p>
+
+<form action="/total" method="post">
+    <div class="mb-3">
+        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="total_record" placeholder="Total Record in kg" type="number">
+    </div>
+    <div class="mb-3">
+        <label> Choose your weight class</label>
+            <select name="weight_class">
+                <option value="55">55 kg</option>
+                <option value="61">61 kg</option>
+                <option value="67">67 kg</option>
+                <option value="73">73 kg</option>
+                <option value="81">81 kg</option>
+                <option value="89">89 kg</option>
+                <option value="96">96 kg</option>
+                <option value="102">102 kg</option>
+                <option value="109">109 kg</option>
+                <option value="109+">109+ kg</option>
+            </select>
+    </div>
+    <button class="btn btn-primary" type="submit">Check your PR</button>
+</form>
+
+{% endblock %}

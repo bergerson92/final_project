@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Snatch
+{% endblock %}
+
+{% block main %}
+<style>
+
+    .head {
+    background-color: #B8E4EE;
+    padding: 10px;
+    border-radius: 50px;
+    }
+
+    .column {
+    float: left;
+    width: 45%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 25px;
+    margin: 2.5%;
+    }
+
+    .row:after {
+    content: "";
+    display: table;
+    clear: both;
+    }
+
+    @media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+    }
+
+</style>
+<header class="head">
+    <h2>Here is a breakdown of all steps to successfully finish a snatch</h2>
+</header>
+
+<div class="row">
+    <div class="column">
+      <h2>First Step</h2>
+      <p>The most important thing to master a snatch is a good starting position. Position yourself similar to starting a deadlift. But grab the barbell with a wider grip than usual while doing deadlifts, like 50% more to the sides from your shoulders. Furthermore, the hips be around the same height as your knees and your knees should reach over the barbell. The spine must be flat and rigit. No bending to minimize risk of injury.</p>
+    </div>
+
+    <div class="column">
+      <h2>Second Step</h2>
+      <p>Although the starting position might be similar, the snatch is definitely not a deadlift. Push the barbell off the floor, by pushing your legs, similar movement like on the leg press.</p>
+    </div>
+
+    <div class="column">
+      <h2>Third step</h2>
+      <p>Continue pushing against the floor as the barbell approaches your hip. As you rise to a standing position, forcefully extend your lower body by pushing hard into the floor with your legs. Your heels should naturally rise off the ground as your knee and hip joints snap into extension. Keep your arms relaxed to allow the barbell to fly freely upward.</p>
+    </div>
+
+    <div class="column">
+      <h2>Forth step</h2>
+      <p>Once you have extended your lower body, quickly transition into catching the bar by dropping down into an overhead squat. Your feet should leave the ground and plant in a wider stance. Snap your arms into a firm, locked position overhead. </p>
+    </div>
+
+    <div class="column">
+      <h2>Fifth step</h2>
+      <p>Stay in the bottom of your overhead squat for as long as you need to stabilize the barbell overhead. Once you’ve secured yourself, rise up to a standing position.</p>
+    </div>
+  </div>
+
+{% endblock %}
